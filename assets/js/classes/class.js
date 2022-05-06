@@ -3,6 +3,8 @@
 // usar THIS para hacer referencia  a la instancia de esa clase
 class Persona{
 
+//
+    static conteo = 0;
     nombre = '';;
     codigo = '';;
     frase = '';
@@ -13,6 +15,16 @@ class Persona{
         this.codigo = codigo;
         this.frase = frase;
     }
+
+//setters y getters
+
+set setComidaFavorita(comida){
+    this.comida = comida;
+}
+
+get getComidaFavorita(){
+    return this.comida;
+}
 
         quienSoy(){
             console.log(` Soy ${ this.nombre } y mi identidad es ${ this.codigo }`);
@@ -25,6 +37,7 @@ class Persona{
 
 const spiderman = new Persona('Peter Parker', 'Spider', 'Soy tu amigable vecino');
 const batman = new Persona('Bruno Diaz', 'Batman', 'Soy tu vecino');
+spiderman.setComidaFavorita = 'Me gusta mucho comer asado'
 
 console.log({ spiderman});
 console.log({ batman});
@@ -32,3 +45,6 @@ spiderman.quienSoy();
 batman.quienSoy();
 spiderman.miFrase();
 batman.miFrase();
+Persona.propiedadExterna = 'Hola Mundo'; // No hacer!!!
+console.log( Persona.propiedadExterna)
+console.log( Persona)
